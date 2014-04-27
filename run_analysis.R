@@ -66,7 +66,25 @@ for (subject in 1:30){
         for (activity in 1:6){
                 filtered_list <- mergedData[mergedData$"Activity Code" == activity & mergedData$Subject == subject,4:564]
                 list_means <- lapply(filtered_list,mean,na.rm=TRUE)
-                list_means <- c("Subject" = subject,"Activity Code" = activity,list_means)
+                if (activity == 1){
+                        temp <- "WALKING"
+                }
+                else if (activity == 2){
+                        temp <- "WALKING_UPSTAIRS"
+                }
+                else if (activity == 3){
+                        temp <- "WALKING_DOWNSTAIRS"
+                }
+                else if (activity == 4){
+                        temp <- "SITTING"
+                }
+                else if (activity == 5){
+                        temp <- "STANDING"
+                }
+                else if (activity == 6){
+                        temp <- "LAYING"
+                }
+                list_means <- c("Subject" = subject,"Activity Code" = activity,"Activity" = temp,list_means)
                 mergedData3 <- rbind(mergedData3,list_means)
         }
 }
