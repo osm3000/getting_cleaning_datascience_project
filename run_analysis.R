@@ -7,6 +7,7 @@
         # Merge data sets
         # Extracts only the measurements on the mean and standard deviation for each measurement.
         # Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+        # Print the output
 
 # Read both the training and the test data sets
 dataTraining_0 <- read.table("./X_train.txt")
@@ -90,4 +91,6 @@ for (subject in 1:30){
 }
 row.names(mergedData3) <- NULL
 mergedData3 <- as.data.frame(mergedData3)
+
+# Print the output
 capture.output( print(mergedData3, print.gap=3), file="tidy_data.txt")
