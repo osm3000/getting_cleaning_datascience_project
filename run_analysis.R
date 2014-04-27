@@ -57,7 +57,7 @@ names(dataTest) <- features_names
 mergedData <- rbind(dataTraining,dataTest)
 
 # Extracts only the measurements on the mean and standard deviation for each measurement.
-toMatch <- c(".*mean\\(\\).*-X$",".*mean\\(\\).*-Y$",".*mean\\(\\).*-Z$", ".*std\\(\\).*-X$",".*std\\(\\).*-Y$",".*std\\(\\).*-Z$")
+toMatch <- c("Subject","Activity Code","Activity",".*mean\\(\\).*-X$",".*mean\\(\\).*-Y$",".*mean\\(\\).*-Z$", ".*std\\(\\).*-X$",".*std\\(\\).*-Y$",".*std\\(\\).*-Z$")
 matches <- unique (grep(paste(toMatch,collapse="|"), features_names, value=TRUE))
 mergedData2 <- mergedData[,matches] #Getting only the needed measurements columns
 
