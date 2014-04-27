@@ -90,12 +90,4 @@ for (subject in 1:30){
 }
 row.names(mergedData3) <- NULL
 mergedData3 <- as.data.frame(mergedData3)
-# temp <- mergedData3$"Activity Code"
-# temp[temp == 6] <- "LAYING"
-# temp[temp == 5] <- "STANDING"
-# temp[temp == 4] <- "SITTING"
-# temp[temp == 3] <- "WALKING_DOWNSTAIRS"
-# temp[temp == 2] <- "WALKING_UPSTAIRS"
-# temp[temp == 1] <- "WALKING"
-# mergedData4 <- c(mergedData3[,1],temp,mergedData3[,2:563])
-# mergedData4 <- as.data.frame(mergedData4)
+capture.output( print(mergedData3, print.gap=3), file="tidy_data.txt")
