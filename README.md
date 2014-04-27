@@ -1,4 +1,4 @@
-# CodeBook for the peer Assignment
+# README for the peer Assignment
 
 ## Steps for the R scipt
 
