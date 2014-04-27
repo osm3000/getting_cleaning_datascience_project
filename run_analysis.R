@@ -9,17 +9,17 @@
         # Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 # Read both the training and the test data sets
-dataTraining_0 <- read.table("./train/X_train.txt")
-dataTest_0 <- read.table("./test/X_test.txt")
+dataTraining_0 <- read.table("./X_train.txt")
+dataTest_0 <- read.table("./X_test.txt")
 
 dataTraining <- dataTraining_0
 dataTest <- dataTest_0
 
 #Loading labels for both data sets
-sub_test_Train <- read.table("./train//subject_train.txt")
-sub_test_Test <- read.table("./test/subject_test.txt")
-y_test0 <- read.table("./test/y_test.txt")
-y_train0 <- read.table("./train/y_train.txt")
+sub_test_Train <- read.table("./subject_train.txt")
+sub_test_Test <- read.table("./subject_test.txt")
+y_test0 <- read.table("./y_test.txt")
+y_train0 <- read.table("./y_train.txt")
 y_test <- y_test0
 y_train <- y_train0
 
