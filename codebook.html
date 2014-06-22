@@ -144,37 +144,1129 @@ hr {
 <body>
 <h1>The codebook</h1>
 
-<p>In this code book, I&#39;ll try to explain briefly what is the relation between the input and the output, and the choices I&#39;ve made throughout this project.</p>
+<h1>The codebook</h1>
 
-<p>I&#39;ll also explain my understanding for the different parts of the assignment.</p>
+<h4>1 tBodyAcc-mean()-X</h4>
 
-<h2>The task required in the project according to the project desciption</h2>
+<h4>2 tBodyAcc-mean()-Y</h4>
 
-<p>According to the course description</p>
+<h4>3 tBodyAcc-mean()-Z</h4>
 
-<h3>You should create one R script called run_analysis.R that does the following.</h3>
+<h4>4 tBodyAcc-std()-X</h4>
 
-<h3>1. Merges the training and the test sets to create one data set.</h3>
+<h4>5 tBodyAcc-std()-Y</h4>
 
-<h5>This is straight forward. I use &ldquo;rbind&rdquo; to combine both the test and the training data sets together. The dataset that has such functionality is called &ldquo;mergedData&rdquo;</h5>
+<h4>6 tBodyAcc-std()-Z</h4>
 
-<h3>2. Extracts only the measurements on the mean and standard deviation for each measurement.</h3>
+<h4>7 tBodyAcc-mad()-X</h4>
 
-<h5>I&#39;ve made a lot of search about the exact meaning of this point. What I feel is right is to make a specific data set, containing only the columns from the original merged datasets which has the following words &ldquo;mean-()&rdquo; and &ldquo;std-()&rdquo;. The data set containing these information is named &ldquo;mergedData2&rdquo;.</h5>
+<h4>8 tBodyAcc-mad()-Y</h4>
 
-<h3>3. Uses descriptive activity names to name the activities in the data set</h3>
+<h4>9 tBodyAcc-mad()-Z</h4>
 
-<h5>See the 4th point also, since they both - I believe - has the same meaning</h5>
+<h4>10 tBodyAcc-max()-X</h4>
 
-<h3>4. Appropriately labels the data set with descriptive activity names.</h3>
+<h4>11 tBodyAcc-max()-Y</h4>
 
-<h5>For this issue, I combined 3 columns to the merged data set. The first is the &ldquo;subject&rdquo;, parsed from the given subject file for each data set. The 2nd is the &ldquo;Activity Code&rdquo;, which has the code for the acitiviy, parsed from the &#39;y&#39; file for each dataset. The 3rd is the mapping between the &ldquo;Activity Code&rdquo; and the actual activity name, called &ldquo;Activity&rdquo;. This is being done by simple comparisons and replacements, like &ldquo; y_train[y_train == 6] &lt;- &quot;LAYING&rdquo; &ldquo;. I&#39;m sure there&#39;s more effecient way. Combining these columns together with the merged dataset gives us a very nice and understood labelled dataset.</h5>
+<h4>12 tBodyAcc-max()-Z</h4>
 
-<h3>5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.</h3>
+<h4>13 tBodyAcc-min()-X</h4>
 
-<h5>I&#39;ve also made a deep search about this issue, however, I didn&#39;t have a clear meaning for it. Based on my understanding, for all the 561 features given in the original datasets, I took the &#39;mean&#39; for each of them, corresponding to each activity for each subject. So, we&#39;ve 30 subjects, and for each of them we&#39;ve 6 activities, we&#39;ve 180 rows and 561 column - each column is the mean of that feature with respect to the activity of each subject -. Again, note this is only based on my understanding for the problem. I added extra 3 columns, &quot;Subject&rdquo;,&ldquo;Activity Code&rdquo; and &ldquo;Activity&rdquo; to make the data more readable. The output of this step is &ldquo;mergedData3&rdquo;</h5>
+<h4>14 tBodyAcc-min()-Y</h4>
 
-<h3>To print the tidy data into a .txt file, I used the &ldquo;capture.output&rdquo; function. I&#39;ve made several a lot of trials with &#39;write.table&#39;, but with no use. Not sure why. the output of this step is &ldquo;tidy_data.txt&rdquo;</h3>
+<h4>15 tBodyAcc-min()-Z</h4>
+
+<h4>16 tBodyAcc-sma()</h4>
+
+<h4>17 tBodyAcc-energy()-X</h4>
+
+<h4>18 tBodyAcc-energy()-Y</h4>
+
+<h4>19 tBodyAcc-energy()-Z</h4>
+
+<h4>20 tBodyAcc-iqr()-X</h4>
+
+<h4>21 tBodyAcc-iqr()-Y</h4>
+
+<h4>22 tBodyAcc-iqr()-Z</h4>
+
+<h4>23 tBodyAcc-entropy()-X</h4>
+
+<h4>24 tBodyAcc-entropy()-Y</h4>
+
+<h4>25 tBodyAcc-entropy()-Z</h4>
+
+<h4>26 tBodyAcc-arCoeff()-X,1</h4>
+
+<h4>27 tBodyAcc-arCoeff()-X,2</h4>
+
+<h4>28 tBodyAcc-arCoeff()-X,3</h4>
+
+<h4>29 tBodyAcc-arCoeff()-X,4</h4>
+
+<h4>30 tBodyAcc-arCoeff()-Y,1</h4>
+
+<h4>31 tBodyAcc-arCoeff()-Y,2</h4>
+
+<h4>32 tBodyAcc-arCoeff()-Y,3</h4>
+
+<h4>33 tBodyAcc-arCoeff()-Y,4</h4>
+
+<h4>34 tBodyAcc-arCoeff()-Z,1</h4>
+
+<h4>35 tBodyAcc-arCoeff()-Z,2</h4>
+
+<h4>36 tBodyAcc-arCoeff()-Z,3</h4>
+
+<h4>37 tBodyAcc-arCoeff()-Z,4</h4>
+
+<h4>38 tBodyAcc-correlation()-X,Y</h4>
+
+<h4>39 tBodyAcc-correlation()-X,Z</h4>
+
+<h4>40 tBodyAcc-correlation()-Y,Z</h4>
+
+<h4>41 tGravityAcc-mean()-X</h4>
+
+<h4>42 tGravityAcc-mean()-Y</h4>
+
+<h4>43 tGravityAcc-mean()-Z</h4>
+
+<h4>44 tGravityAcc-std()-X</h4>
+
+<h4>45 tGravityAcc-std()-Y</h4>
+
+<h4>46 tGravityAcc-std()-Z</h4>
+
+<h4>47 tGravityAcc-mad()-X</h4>
+
+<h4>48 tGravityAcc-mad()-Y</h4>
+
+<h4>49 tGravityAcc-mad()-Z</h4>
+
+<h4>50 tGravityAcc-max()-X</h4>
+
+<h4>51 tGravityAcc-max()-Y</h4>
+
+<h4>52 tGravityAcc-max()-Z</h4>
+
+<h4>53 tGravityAcc-min()-X</h4>
+
+<h4>54 tGravityAcc-min()-Y</h4>
+
+<h4>55 tGravityAcc-min()-Z</h4>
+
+<h4>56 tGravityAcc-sma()</h4>
+
+<h4>57 tGravityAcc-energy()-X</h4>
+
+<h4>58 tGravityAcc-energy()-Y</h4>
+
+<h4>59 tGravityAcc-energy()-Z</h4>
+
+<h4>60 tGravityAcc-iqr()-X</h4>
+
+<h4>61 tGravityAcc-iqr()-Y</h4>
+
+<h4>62 tGravityAcc-iqr()-Z</h4>
+
+<h4>63 tGravityAcc-entropy()-X</h4>
+
+<h4>64 tGravityAcc-entropy()-Y</h4>
+
+<h4>65 tGravityAcc-entropy()-Z</h4>
+
+<h4>66 tGravityAcc-arCoeff()-X,1</h4>
+
+<h4>67 tGravityAcc-arCoeff()-X,2</h4>
+
+<h4>68 tGravityAcc-arCoeff()-X,3</h4>
+
+<h4>69 tGravityAcc-arCoeff()-X,4</h4>
+
+<h4>70 tGravityAcc-arCoeff()-Y,1</h4>
+
+<h4>71 tGravityAcc-arCoeff()-Y,2</h4>
+
+<h4>72 tGravityAcc-arCoeff()-Y,3</h4>
+
+<h4>73 tGravityAcc-arCoeff()-Y,4</h4>
+
+<h4>74 tGravityAcc-arCoeff()-Z,1</h4>
+
+<h4>75 tGravityAcc-arCoeff()-Z,2</h4>
+
+<h4>76 tGravityAcc-arCoeff()-Z,3</h4>
+
+<h4>77 tGravityAcc-arCoeff()-Z,4</h4>
+
+<h4>78 tGravityAcc-correlation()-X,Y</h4>
+
+<h4>79 tGravityAcc-correlation()-X,Z</h4>
+
+<h4>80 tGravityAcc-correlation()-Y,Z</h4>
+
+<h4>81 tBodyAccJerk-mean()-X</h4>
+
+<h4>82 tBodyAccJerk-mean()-Y</h4>
+
+<h4>83 tBodyAccJerk-mean()-Z</h4>
+
+<h4>84 tBodyAccJerk-std()-X</h4>
+
+<h4>85 tBodyAccJerk-std()-Y</h4>
+
+<h4>86 tBodyAccJerk-std()-Z</h4>
+
+<h4>87 tBodyAccJerk-mad()-X</h4>
+
+<h4>88 tBodyAccJerk-mad()-Y</h4>
+
+<h4>89 tBodyAccJerk-mad()-Z</h4>
+
+<h4>90 tBodyAccJerk-max()-X</h4>
+
+<h4>91 tBodyAccJerk-max()-Y</h4>
+
+<h4>92 tBodyAccJerk-max()-Z</h4>
+
+<h4>93 tBodyAccJerk-min()-X</h4>
+
+<h4>94 tBodyAccJerk-min()-Y</h4>
+
+<h4>95 tBodyAccJerk-min()-Z</h4>
+
+<h4>96 tBodyAccJerk-sma()</h4>
+
+<h4>97 tBodyAccJerk-energy()-X</h4>
+
+<h4>98 tBodyAccJerk-energy()-Y</h4>
+
+<h4>99 tBodyAccJerk-energy()-Z</h4>
+
+<h4>100 tBodyAccJerk-iqr()-X</h4>
+
+<h4>101 tBodyAccJerk-iqr()-Y</h4>
+
+<h4>102 tBodyAccJerk-iqr()-Z</h4>
+
+<h4>103 tBodyAccJerk-entropy()-X</h4>
+
+<h4>104 tBodyAccJerk-entropy()-Y</h4>
+
+<h4>105 tBodyAccJerk-entropy()-Z</h4>
+
+<h4>106 tBodyAccJerk-arCoeff()-X,1</h4>
+
+<h4>107 tBodyAccJerk-arCoeff()-X,2</h4>
+
+<h4>108 tBodyAccJerk-arCoeff()-X,3</h4>
+
+<h4>109 tBodyAccJerk-arCoeff()-X,4</h4>
+
+<h4>110 tBodyAccJerk-arCoeff()-Y,1</h4>
+
+<h4>111 tBodyAccJerk-arCoeff()-Y,2</h4>
+
+<h4>112 tBodyAccJerk-arCoeff()-Y,3</h4>
+
+<h4>113 tBodyAccJerk-arCoeff()-Y,4</h4>
+
+<h4>114 tBodyAccJerk-arCoeff()-Z,1</h4>
+
+<h4>115 tBodyAccJerk-arCoeff()-Z,2</h4>
+
+<h4>116 tBodyAccJerk-arCoeff()-Z,3</h4>
+
+<h4>117 tBodyAccJerk-arCoeff()-Z,4</h4>
+
+<h4>118 tBodyAccJerk-correlation()-X,Y</h4>
+
+<h4>119 tBodyAccJerk-correlation()-X,Z</h4>
+
+<h4>120 tBodyAccJerk-correlation()-Y,Z</h4>
+
+<h4>121 tBodyGyro-mean()-X</h4>
+
+<h4>122 tBodyGyro-mean()-Y</h4>
+
+<h4>123 tBodyGyro-mean()-Z</h4>
+
+<h4>124 tBodyGyro-std()-X</h4>
+
+<h4>125 tBodyGyro-std()-Y</h4>
+
+<h4>126 tBodyGyro-std()-Z</h4>
+
+<h4>127 tBodyGyro-mad()-X</h4>
+
+<h4>128 tBodyGyro-mad()-Y</h4>
+
+<h4>129 tBodyGyro-mad()-Z</h4>
+
+<h4>130 tBodyGyro-max()-X</h4>
+
+<h4>131 tBodyGyro-max()-Y</h4>
+
+<h4>132 tBodyGyro-max()-Z</h4>
+
+<h4>133 tBodyGyro-min()-X</h4>
+
+<h4>134 tBodyGyro-min()-Y</h4>
+
+<h4>135 tBodyGyro-min()-Z</h4>
+
+<h4>136 tBodyGyro-sma()</h4>
+
+<h4>137 tBodyGyro-energy()-X</h4>
+
+<h4>138 tBodyGyro-energy()-Y</h4>
+
+<h4>139 tBodyGyro-energy()-Z</h4>
+
+<h4>140 tBodyGyro-iqr()-X</h4>
+
+<h4>141 tBodyGyro-iqr()-Y</h4>
+
+<h4>142 tBodyGyro-iqr()-Z</h4>
+
+<h4>143 tBodyGyro-entropy()-X</h4>
+
+<h4>144 tBodyGyro-entropy()-Y</h4>
+
+<h4>145 tBodyGyro-entropy()-Z</h4>
+
+<h4>146 tBodyGyro-arCoeff()-X,1</h4>
+
+<h4>147 tBodyGyro-arCoeff()-X,2</h4>
+
+<h4>148 tBodyGyro-arCoeff()-X,3</h4>
+
+<h4>149 tBodyGyro-arCoeff()-X,4</h4>
+
+<h4>150 tBodyGyro-arCoeff()-Y,1</h4>
+
+<h4>151 tBodyGyro-arCoeff()-Y,2</h4>
+
+<h4>152 tBodyGyro-arCoeff()-Y,3</h4>
+
+<h4>153 tBodyGyro-arCoeff()-Y,4</h4>
+
+<h4>154 tBodyGyro-arCoeff()-Z,1</h4>
+
+<h4>155 tBodyGyro-arCoeff()-Z,2</h4>
+
+<h4>156 tBodyGyro-arCoeff()-Z,3</h4>
+
+<h4>157 tBodyGyro-arCoeff()-Z,4</h4>
+
+<h4>158 tBodyGyro-correlation()-X,Y</h4>
+
+<h4>159 tBodyGyro-correlation()-X,Z</h4>
+
+<h4>160 tBodyGyro-correlation()-Y,Z</h4>
+
+<h4>161 tBodyGyroJerk-mean()-X</h4>
+
+<h4>162 tBodyGyroJerk-mean()-Y</h4>
+
+<h4>163 tBodyGyroJerk-mean()-Z</h4>
+
+<h4>164 tBodyGyroJerk-std()-X</h4>
+
+<h4>165 tBodyGyroJerk-std()-Y</h4>
+
+<h4>166 tBodyGyroJerk-std()-Z</h4>
+
+<h4>167 tBodyGyroJerk-mad()-X</h4>
+
+<h4>168 tBodyGyroJerk-mad()-Y</h4>
+
+<h4>169 tBodyGyroJerk-mad()-Z</h4>
+
+<h4>170 tBodyGyroJerk-max()-X</h4>
+
+<h4>171 tBodyGyroJerk-max()-Y</h4>
+
+<h4>172 tBodyGyroJerk-max()-Z</h4>
+
+<h4>173 tBodyGyroJerk-min()-X</h4>
+
+<h4>174 tBodyGyroJerk-min()-Y</h4>
+
+<h4>175 tBodyGyroJerk-min()-Z</h4>
+
+<h4>176 tBodyGyroJerk-sma()</h4>
+
+<h4>177 tBodyGyroJerk-energy()-X</h4>
+
+<h4>178 tBodyGyroJerk-energy()-Y</h4>
+
+<h4>179 tBodyGyroJerk-energy()-Z</h4>
+
+<h4>180 tBodyGyroJerk-iqr()-X</h4>
+
+<h4>181 tBodyGyroJerk-iqr()-Y</h4>
+
+<h4>182 tBodyGyroJerk-iqr()-Z</h4>
+
+<h4>183 tBodyGyroJerk-entropy()-X</h4>
+
+<h4>184 tBodyGyroJerk-entropy()-Y</h4>
+
+<h4>185 tBodyGyroJerk-entropy()-Z</h4>
+
+<h4>186 tBodyGyroJerk-arCoeff()-X,1</h4>
+
+<h4>187 tBodyGyroJerk-arCoeff()-X,2</h4>
+
+<h4>188 tBodyGyroJerk-arCoeff()-X,3</h4>
+
+<h4>189 tBodyGyroJerk-arCoeff()-X,4</h4>
+
+<h4>190 tBodyGyroJerk-arCoeff()-Y,1</h4>
+
+<h4>191 tBodyGyroJerk-arCoeff()-Y,2</h4>
+
+<h4>192 tBodyGyroJerk-arCoeff()-Y,3</h4>
+
+<h4>193 tBodyGyroJerk-arCoeff()-Y,4</h4>
+
+<h4>194 tBodyGyroJerk-arCoeff()-Z,1</h4>
+
+<h4>195 tBodyGyroJerk-arCoeff()-Z,2</h4>
+
+<h4>196 tBodyGyroJerk-arCoeff()-Z,3</h4>
+
+<h4>197 tBodyGyroJerk-arCoeff()-Z,4</h4>
+
+<h4>198 tBodyGyroJerk-correlation()-X,Y</h4>
+
+<h4>199 tBodyGyroJerk-correlation()-X,Z</h4>
+
+<h4>200 tBodyGyroJerk-correlation()-Y,Z</h4>
+
+<h4>201 tBodyAccMag-mean()</h4>
+
+<h4>202 tBodyAccMag-std()</h4>
+
+<h4>203 tBodyAccMag-mad()</h4>
+
+<h4>204 tBodyAccMag-max()</h4>
+
+<h4>205 tBodyAccMag-min()</h4>
+
+<h4>206 tBodyAccMag-sma()</h4>
+
+<h4>207 tBodyAccMag-energy()</h4>
+
+<h4>208 tBodyAccMag-iqr()</h4>
+
+<h4>209 tBodyAccMag-entropy()</h4>
+
+<h4>210 tBodyAccMag-arCoeff()1</h4>
+
+<h4>211 tBodyAccMag-arCoeff()2</h4>
+
+<h4>212 tBodyAccMag-arCoeff()3</h4>
+
+<h4>213 tBodyAccMag-arCoeff()4</h4>
+
+<h4>214 tGravityAccMag-mean()</h4>
+
+<h4>215 tGravityAccMag-std()</h4>
+
+<h4>216 tGravityAccMag-mad()</h4>
+
+<h4>217 tGravityAccMag-max()</h4>
+
+<h4>218 tGravityAccMag-min()</h4>
+
+<h4>219 tGravityAccMag-sma()</h4>
+
+<h4>220 tGravityAccMag-energy()</h4>
+
+<h4>221 tGravityAccMag-iqr()</h4>
+
+<h4>222 tGravityAccMag-entropy()</h4>
+
+<h4>223 tGravityAccMag-arCoeff()1</h4>
+
+<h4>224 tGravityAccMag-arCoeff()2</h4>
+
+<h4>225 tGravityAccMag-arCoeff()3</h4>
+
+<h4>226 tGravityAccMag-arCoeff()4</h4>
+
+<h4>227 tBodyAccJerkMag-mean()</h4>
+
+<h4>228 tBodyAccJerkMag-std()</h4>
+
+<h4>229 tBodyAccJerkMag-mad()</h4>
+
+<h4>230 tBodyAccJerkMag-max()</h4>
+
+<h4>231 tBodyAccJerkMag-min()</h4>
+
+<h4>232 tBodyAccJerkMag-sma()</h4>
+
+<h4>233 tBodyAccJerkMag-energy()</h4>
+
+<h4>234 tBodyAccJerkMag-iqr()</h4>
+
+<h4>235 tBodyAccJerkMag-entropy()</h4>
+
+<h4>236 tBodyAccJerkMag-arCoeff()1</h4>
+
+<h4>237 tBodyAccJerkMag-arCoeff()2</h4>
+
+<h4>238 tBodyAccJerkMag-arCoeff()3</h4>
+
+<h4>239 tBodyAccJerkMag-arCoeff()4</h4>
+
+<h4>240 tBodyGyroMag-mean()</h4>
+
+<h4>241 tBodyGyroMag-std()</h4>
+
+<h4>242 tBodyGyroMag-mad()</h4>
+
+<h4>243 tBodyGyroMag-max()</h4>
+
+<h4>244 tBodyGyroMag-min()</h4>
+
+<h4>245 tBodyGyroMag-sma()</h4>
+
+<h4>246 tBodyGyroMag-energy()</h4>
+
+<h4>247 tBodyGyroMag-iqr()</h4>
+
+<h4>248 tBodyGyroMag-entropy()</h4>
+
+<h4>249 tBodyGyroMag-arCoeff()1</h4>
+
+<h4>250 tBodyGyroMag-arCoeff()2</h4>
+
+<h4>251 tBodyGyroMag-arCoeff()3</h4>
+
+<h4>252 tBodyGyroMag-arCoeff()4</h4>
+
+<h4>253 tBodyGyroJerkMag-mean()</h4>
+
+<h4>254 tBodyGyroJerkMag-std()</h4>
+
+<h4>255 tBodyGyroJerkMag-mad()</h4>
+
+<h4>256 tBodyGyroJerkMag-max()</h4>
+
+<h4>257 tBodyGyroJerkMag-min()</h4>
+
+<h4>258 tBodyGyroJerkMag-sma()</h4>
+
+<h4>259 tBodyGyroJerkMag-energy()</h4>
+
+<h4>260 tBodyGyroJerkMag-iqr()</h4>
+
+<h4>261 tBodyGyroJerkMag-entropy()</h4>
+
+<h4>262 tBodyGyroJerkMag-arCoeff()1</h4>
+
+<h4>263 tBodyGyroJerkMag-arCoeff()2</h4>
+
+<h4>264 tBodyGyroJerkMag-arCoeff()3</h4>
+
+<h4>265 tBodyGyroJerkMag-arCoeff()4</h4>
+
+<h4>266 fBodyAcc-mean()-X</h4>
+
+<h4>267 fBodyAcc-mean()-Y</h4>
+
+<h4>268 fBodyAcc-mean()-Z</h4>
+
+<h4>269 fBodyAcc-std()-X</h4>
+
+<h4>270 fBodyAcc-std()-Y</h4>
+
+<h4>271 fBodyAcc-std()-Z</h4>
+
+<h4>272 fBodyAcc-mad()-X</h4>
+
+<h4>273 fBodyAcc-mad()-Y</h4>
+
+<h4>274 fBodyAcc-mad()-Z</h4>
+
+<h4>275 fBodyAcc-max()-X</h4>
+
+<h4>276 fBodyAcc-max()-Y</h4>
+
+<h4>277 fBodyAcc-max()-Z</h4>
+
+<h4>278 fBodyAcc-min()-X</h4>
+
+<h4>279 fBodyAcc-min()-Y</h4>
+
+<h4>280 fBodyAcc-min()-Z</h4>
+
+<h4>281 fBodyAcc-sma()</h4>
+
+<h4>282 fBodyAcc-energy()-X</h4>
+
+<h4>283 fBodyAcc-energy()-Y</h4>
+
+<h4>284 fBodyAcc-energy()-Z</h4>
+
+<h4>285 fBodyAcc-iqr()-X</h4>
+
+<h4>286 fBodyAcc-iqr()-Y</h4>
+
+<h4>287 fBodyAcc-iqr()-Z</h4>
+
+<h4>288 fBodyAcc-entropy()-X</h4>
+
+<h4>289 fBodyAcc-entropy()-Y</h4>
+
+<h4>290 fBodyAcc-entropy()-Z</h4>
+
+<h4>291 fBodyAcc-maxInds-X</h4>
+
+<h4>292 fBodyAcc-maxInds-Y</h4>
+
+<h4>293 fBodyAcc-maxInds-Z</h4>
+
+<h4>294 fBodyAcc-meanFreq()-X</h4>
+
+<h4>295 fBodyAcc-meanFreq()-Y</h4>
+
+<h4>296 fBodyAcc-meanFreq()-Z</h4>
+
+<h4>297 fBodyAcc-skewness()-X</h4>
+
+<h4>298 fBodyAcc-kurtosis()-X</h4>
+
+<h4>299 fBodyAcc-skewness()-Y</h4>
+
+<h4>300 fBodyAcc-kurtosis()-Y</h4>
+
+<h4>301 fBodyAcc-skewness()-Z</h4>
+
+<h4>302 fBodyAcc-kurtosis()-Z</h4>
+
+<h4>303 fBodyAcc-bandsEnergy()-1,8</h4>
+
+<h4>304 fBodyAcc-bandsEnergy()-9,16</h4>
+
+<h4>305 fBodyAcc-bandsEnergy()-17,24</h4>
+
+<h4>306 fBodyAcc-bandsEnergy()-25,32</h4>
+
+<h4>307 fBodyAcc-bandsEnergy()-33,40</h4>
+
+<h4>308 fBodyAcc-bandsEnergy()-41,48</h4>
+
+<h4>309 fBodyAcc-bandsEnergy()-49,56</h4>
+
+<h4>310 fBodyAcc-bandsEnergy()-57,64</h4>
+
+<h4>311 fBodyAcc-bandsEnergy()-1,16</h4>
+
+<h4>312 fBodyAcc-bandsEnergy()-17,32</h4>
+
+<h4>313 fBodyAcc-bandsEnergy()-33,48</h4>
+
+<h4>314 fBodyAcc-bandsEnergy()-49,64</h4>
+
+<h4>315 fBodyAcc-bandsEnergy()-1,24</h4>
+
+<h4>316 fBodyAcc-bandsEnergy()-25,48</h4>
+
+<h4>317 fBodyAcc-bandsEnergy()-1,8</h4>
+
+<h4>318 fBodyAcc-bandsEnergy()-9,16</h4>
+
+<h4>319 fBodyAcc-bandsEnergy()-17,24</h4>
+
+<h4>320 fBodyAcc-bandsEnergy()-25,32</h4>
+
+<h4>321 fBodyAcc-bandsEnergy()-33,40</h4>
+
+<h4>322 fBodyAcc-bandsEnergy()-41,48</h4>
+
+<h4>323 fBodyAcc-bandsEnergy()-49,56</h4>
+
+<h4>324 fBodyAcc-bandsEnergy()-57,64</h4>
+
+<h4>325 fBodyAcc-bandsEnergy()-1,16</h4>
+
+<h4>326 fBodyAcc-bandsEnergy()-17,32</h4>
+
+<h4>327 fBodyAcc-bandsEnergy()-33,48</h4>
+
+<h4>328 fBodyAcc-bandsEnergy()-49,64</h4>
+
+<h4>329 fBodyAcc-bandsEnergy()-1,24</h4>
+
+<h4>330 fBodyAcc-bandsEnergy()-25,48</h4>
+
+<h4>331 fBodyAcc-bandsEnergy()-1,8</h4>
+
+<h4>332 fBodyAcc-bandsEnergy()-9,16</h4>
+
+<h4>333 fBodyAcc-bandsEnergy()-17,24</h4>
+
+<h4>334 fBodyAcc-bandsEnergy()-25,32</h4>
+
+<h4>335 fBodyAcc-bandsEnergy()-33,40</h4>
+
+<h4>336 fBodyAcc-bandsEnergy()-41,48</h4>
+
+<h4>337 fBodyAcc-bandsEnergy()-49,56</h4>
+
+<h4>338 fBodyAcc-bandsEnergy()-57,64</h4>
+
+<h4>339 fBodyAcc-bandsEnergy()-1,16</h4>
+
+<h4>340 fBodyAcc-bandsEnergy()-17,32</h4>
+
+<h4>341 fBodyAcc-bandsEnergy()-33,48</h4>
+
+<h4>342 fBodyAcc-bandsEnergy()-49,64</h4>
+
+<h4>343 fBodyAcc-bandsEnergy()-1,24</h4>
+
+<h4>344 fBodyAcc-bandsEnergy()-25,48</h4>
+
+<h4>345 fBodyAccJerk-mean()-X</h4>
+
+<h4>346 fBodyAccJerk-mean()-Y</h4>
+
+<h4>347 fBodyAccJerk-mean()-Z</h4>
+
+<h4>348 fBodyAccJerk-std()-X</h4>
+
+<h4>349 fBodyAccJerk-std()-Y</h4>
+
+<h4>350 fBodyAccJerk-std()-Z</h4>
+
+<h4>351 fBodyAccJerk-mad()-X</h4>
+
+<h4>352 fBodyAccJerk-mad()-Y</h4>
+
+<h4>353 fBodyAccJerk-mad()-Z</h4>
+
+<h4>354 fBodyAccJerk-max()-X</h4>
+
+<h4>355 fBodyAccJerk-max()-Y</h4>
+
+<h4>356 fBodyAccJerk-max()-Z</h4>
+
+<h4>357 fBodyAccJerk-min()-X</h4>
+
+<h4>358 fBodyAccJerk-min()-Y</h4>
+
+<h4>359 fBodyAccJerk-min()-Z</h4>
+
+<h4>360 fBodyAccJerk-sma()</h4>
+
+<h4>361 fBodyAccJerk-energy()-X</h4>
+
+<h4>362 fBodyAccJerk-energy()-Y</h4>
+
+<h4>363 fBodyAccJerk-energy()-Z</h4>
+
+<h4>364 fBodyAccJerk-iqr()-X</h4>
+
+<h4>365 fBodyAccJerk-iqr()-Y</h4>
+
+<h4>366 fBodyAccJerk-iqr()-Z</h4>
+
+<h4>367 fBodyAccJerk-entropy()-X</h4>
+
+<h4>368 fBodyAccJerk-entropy()-Y</h4>
+
+<h4>369 fBodyAccJerk-entropy()-Z</h4>
+
+<h4>370 fBodyAccJerk-maxInds-X</h4>
+
+<h4>371 fBodyAccJerk-maxInds-Y</h4>
+
+<h4>372 fBodyAccJerk-maxInds-Z</h4>
+
+<h4>373 fBodyAccJerk-meanFreq()-X</h4>
+
+<h4>374 fBodyAccJerk-meanFreq()-Y</h4>
+
+<h4>375 fBodyAccJerk-meanFreq()-Z</h4>
+
+<h4>376 fBodyAccJerk-skewness()-X</h4>
+
+<h4>377 fBodyAccJerk-kurtosis()-X</h4>
+
+<h4>378 fBodyAccJerk-skewness()-Y</h4>
+
+<h4>379 fBodyAccJerk-kurtosis()-Y</h4>
+
+<h4>380 fBodyAccJerk-skewness()-Z</h4>
+
+<h4>381 fBodyAccJerk-kurtosis()-Z</h4>
+
+<h4>382 fBodyAccJerk-bandsEnergy()-1,8</h4>
+
+<h4>383 fBodyAccJerk-bandsEnergy()-9,16</h4>
+
+<h4>384 fBodyAccJerk-bandsEnergy()-17,24</h4>
+
+<h4>385 fBodyAccJerk-bandsEnergy()-25,32</h4>
+
+<h4>386 fBodyAccJerk-bandsEnergy()-33,40</h4>
+
+<h4>387 fBodyAccJerk-bandsEnergy()-41,48</h4>
+
+<h4>388 fBodyAccJerk-bandsEnergy()-49,56</h4>
+
+<h4>389 fBodyAccJerk-bandsEnergy()-57,64</h4>
+
+<h4>390 fBodyAccJerk-bandsEnergy()-1,16</h4>
+
+<h4>391 fBodyAccJerk-bandsEnergy()-17,32</h4>
+
+<h4>392 fBodyAccJerk-bandsEnergy()-33,48</h4>
+
+<h4>393 fBodyAccJerk-bandsEnergy()-49,64</h4>
+
+<h4>394 fBodyAccJerk-bandsEnergy()-1,24</h4>
+
+<h4>395 fBodyAccJerk-bandsEnergy()-25,48</h4>
+
+<h4>396 fBodyAccJerk-bandsEnergy()-1,8</h4>
+
+<h4>397 fBodyAccJerk-bandsEnergy()-9,16</h4>
+
+<h4>398 fBodyAccJerk-bandsEnergy()-17,24</h4>
+
+<h4>399 fBodyAccJerk-bandsEnergy()-25,32</h4>
+
+<h4>400 fBodyAccJerk-bandsEnergy()-33,40</h4>
+
+<h4>401 fBodyAccJerk-bandsEnergy()-41,48</h4>
+
+<h4>402 fBodyAccJerk-bandsEnergy()-49,56</h4>
+
+<h4>403 fBodyAccJerk-bandsEnergy()-57,64</h4>
+
+<h4>404 fBodyAccJerk-bandsEnergy()-1,16</h4>
+
+<h4>405 fBodyAccJerk-bandsEnergy()-17,32</h4>
+
+<h4>406 fBodyAccJerk-bandsEnergy()-33,48</h4>
+
+<h4>407 fBodyAccJerk-bandsEnergy()-49,64</h4>
+
+<h4>408 fBodyAccJerk-bandsEnergy()-1,24</h4>
+
+<h4>409 fBodyAccJerk-bandsEnergy()-25,48</h4>
+
+<h4>410 fBodyAccJerk-bandsEnergy()-1,8</h4>
+
+<h4>411 fBodyAccJerk-bandsEnergy()-9,16</h4>
+
+<h4>412 fBodyAccJerk-bandsEnergy()-17,24</h4>
+
+<h4>413 fBodyAccJerk-bandsEnergy()-25,32</h4>
+
+<h4>414 fBodyAccJerk-bandsEnergy()-33,40</h4>
+
+<h4>415 fBodyAccJerk-bandsEnergy()-41,48</h4>
+
+<h4>416 fBodyAccJerk-bandsEnergy()-49,56</h4>
+
+<h4>417 fBodyAccJerk-bandsEnergy()-57,64</h4>
+
+<h4>418 fBodyAccJerk-bandsEnergy()-1,16</h4>
+
+<h4>419 fBodyAccJerk-bandsEnergy()-17,32</h4>
+
+<h4>420 fBodyAccJerk-bandsEnergy()-33,48</h4>
+
+<h4>421 fBodyAccJerk-bandsEnergy()-49,64</h4>
+
+<h4>422 fBodyAccJerk-bandsEnergy()-1,24</h4>
+
+<h4>423 fBodyAccJerk-bandsEnergy()-25,48</h4>
+
+<h4>424 fBodyGyro-mean()-X</h4>
+
+<h4>425 fBodyGyro-mean()-Y</h4>
+
+<h4>426 fBodyGyro-mean()-Z</h4>
+
+<h4>427 fBodyGyro-std()-X</h4>
+
+<h4>428 fBodyGyro-std()-Y</h4>
+
+<h4>429 fBodyGyro-std()-Z</h4>
+
+<h4>430 fBodyGyro-mad()-X</h4>
+
+<h4>431 fBodyGyro-mad()-Y</h4>
+
+<h4>432 fBodyGyro-mad()-Z</h4>
+
+<h4>433 fBodyGyro-max()-X</h4>
+
+<h4>434 fBodyGyro-max()-Y</h4>
+
+<h4>435 fBodyGyro-max()-Z</h4>
+
+<h4>436 fBodyGyro-min()-X</h4>
+
+<h4>437 fBodyGyro-min()-Y</h4>
+
+<h4>438 fBodyGyro-min()-Z</h4>
+
+<h4>439 fBodyGyro-sma()</h4>
+
+<h4>440 fBodyGyro-energy()-X</h4>
+
+<h4>441 fBodyGyro-energy()-Y</h4>
+
+<h4>442 fBodyGyro-energy()-Z</h4>
+
+<h4>443 fBodyGyro-iqr()-X</h4>
+
+<h4>444 fBodyGyro-iqr()-Y</h4>
+
+<h4>445 fBodyGyro-iqr()-Z</h4>
+
+<h4>446 fBodyGyro-entropy()-X</h4>
+
+<h4>447 fBodyGyro-entropy()-Y</h4>
+
+<h4>448 fBodyGyro-entropy()-Z</h4>
+
+<h4>449 fBodyGyro-maxInds-X</h4>
+
+<h4>450 fBodyGyro-maxInds-Y</h4>
+
+<h4>451 fBodyGyro-maxInds-Z</h4>
+
+<h4>452 fBodyGyro-meanFreq()-X</h4>
+
+<h4>453 fBodyGyro-meanFreq()-Y</h4>
+
+<h4>454 fBodyGyro-meanFreq()-Z</h4>
+
+<h4>455 fBodyGyro-skewness()-X</h4>
+
+<h4>456 fBodyGyro-kurtosis()-X</h4>
+
+<h4>457 fBodyGyro-skewness()-Y</h4>
+
+<h4>458 fBodyGyro-kurtosis()-Y</h4>
+
+<h4>459 fBodyGyro-skewness()-Z</h4>
+
+<h4>460 fBodyGyro-kurtosis()-Z</h4>
+
+<h4>461 fBodyGyro-bandsEnergy()-1,8</h4>
+
+<h4>462 fBodyGyro-bandsEnergy()-9,16</h4>
+
+<h4>463 fBodyGyro-bandsEnergy()-17,24</h4>
+
+<h4>464 fBodyGyro-bandsEnergy()-25,32</h4>
+
+<h4>465 fBodyGyro-bandsEnergy()-33,40</h4>
+
+<h4>466 fBodyGyro-bandsEnergy()-41,48</h4>
+
+<h4>467 fBodyGyro-bandsEnergy()-49,56</h4>
+
+<h4>468 fBodyGyro-bandsEnergy()-57,64</h4>
+
+<h4>469 fBodyGyro-bandsEnergy()-1,16</h4>
+
+<h4>470 fBodyGyro-bandsEnergy()-17,32</h4>
+
+<h4>471 fBodyGyro-bandsEnergy()-33,48</h4>
+
+<h4>472 fBodyGyro-bandsEnergy()-49,64</h4>
+
+<h4>473 fBodyGyro-bandsEnergy()-1,24</h4>
+
+<h4>474 fBodyGyro-bandsEnergy()-25,48</h4>
+
+<h4>475 fBodyGyro-bandsEnergy()-1,8</h4>
+
+<h4>476 fBodyGyro-bandsEnergy()-9,16</h4>
+
+<h4>477 fBodyGyro-bandsEnergy()-17,24</h4>
+
+<h4>478 fBodyGyro-bandsEnergy()-25,32</h4>
+
+<h4>479 fBodyGyro-bandsEnergy()-33,40</h4>
+
+<h4>480 fBodyGyro-bandsEnergy()-41,48</h4>
+
+<h4>481 fBodyGyro-bandsEnergy()-49,56</h4>
+
+<h4>482 fBodyGyro-bandsEnergy()-57,64</h4>
+
+<h4>483 fBodyGyro-bandsEnergy()-1,16</h4>
+
+<h4>484 fBodyGyro-bandsEnergy()-17,32</h4>
+
+<h4>485 fBodyGyro-bandsEnergy()-33,48</h4>
+
+<h4>486 fBodyGyro-bandsEnergy()-49,64</h4>
+
+<h4>487 fBodyGyro-bandsEnergy()-1,24</h4>
+
+<h4>488 fBodyGyro-bandsEnergy()-25,48</h4>
+
+<h4>489 fBodyGyro-bandsEnergy()-1,8</h4>
+
+<h4>490 fBodyGyro-bandsEnergy()-9,16</h4>
+
+<h4>491 fBodyGyro-bandsEnergy()-17,24</h4>
+
+<h4>492 fBodyGyro-bandsEnergy()-25,32</h4>
+
+<h4>493 fBodyGyro-bandsEnergy()-33,40</h4>
+
+<h4>494 fBodyGyro-bandsEnergy()-41,48</h4>
+
+<h4>495 fBodyGyro-bandsEnergy()-49,56</h4>
+
+<h4>496 fBodyGyro-bandsEnergy()-57,64</h4>
+
+<h4>497 fBodyGyro-bandsEnergy()-1,16</h4>
+
+<h4>498 fBodyGyro-bandsEnergy()-17,32</h4>
+
+<h4>499 fBodyGyro-bandsEnergy()-33,48</h4>
+
+<h4>500 fBodyGyro-bandsEnergy()-49,64</h4>
+
+<h4>501 fBodyGyro-bandsEnergy()-1,24</h4>
+
+<h4>502 fBodyGyro-bandsEnergy()-25,48</h4>
+
+<h4>503 fBodyAccMag-mean()</h4>
+
+<h4>504 fBodyAccMag-std()</h4>
+
+<h4>505 fBodyAccMag-mad()</h4>
+
+<h4>506 fBodyAccMag-max()</h4>
+
+<h4>507 fBodyAccMag-min()</h4>
+
+<h4>508 fBodyAccMag-sma()</h4>
+
+<h4>509 fBodyAccMag-energy()</h4>
+
+<h4>510 fBodyAccMag-iqr()</h4>
+
+<h4>511 fBodyAccMag-entropy()</h4>
+
+<h4>512 fBodyAccMag-maxInds</h4>
+
+<h4>513 fBodyAccMag-meanFreq()</h4>
+
+<h4>514 fBodyAccMag-skewness()</h4>
+
+<h4>515 fBodyAccMag-kurtosis()</h4>
+
+<h4>516 fBodyBodyAccJerkMag-mean()</h4>
+
+<h4>517 fBodyBodyAccJerkMag-std()</h4>
+
+<h4>518 fBodyBodyAccJerkMag-mad()</h4>
+
+<h4>519 fBodyBodyAccJerkMag-max()</h4>
+
+<h4>520 fBodyBodyAccJerkMag-min()</h4>
+
+<h4>521 fBodyBodyAccJerkMag-sma()</h4>
+
+<h4>522 fBodyBodyAccJerkMag-energy()</h4>
+
+<h4>523 fBodyBodyAccJerkMag-iqr()</h4>
+
+<h4>524 fBodyBodyAccJerkMag-entropy()</h4>
+
+<h4>525 fBodyBodyAccJerkMag-maxInds</h4>
+
+<h4>526 fBodyBodyAccJerkMag-meanFreq()</h4>
+
+<h4>527 fBodyBodyAccJerkMag-skewness()</h4>
+
+<h4>528 fBodyBodyAccJerkMag-kurtosis()</h4>
+
+<h4>529 fBodyBodyGyroMag-mean()</h4>
+
+<h4>530 fBodyBodyGyroMag-std()</h4>
+
+<h4>531 fBodyBodyGyroMag-mad()</h4>
+
+<h4>532 fBodyBodyGyroMag-max()</h4>
+
+<h4>533 fBodyBodyGyroMag-min()</h4>
+
+<h4>534 fBodyBodyGyroMag-sma()</h4>
+
+<h4>535 fBodyBodyGyroMag-energy()</h4>
+
+<h4>536 fBodyBodyGyroMag-iqr()</h4>
+
+<h4>537 fBodyBodyGyroMag-entropy()</h4>
+
+<h4>538 fBodyBodyGyroMag-maxInds</h4>
+
+<h4>539 fBodyBodyGyroMag-meanFreq()</h4>
+
+<h4>540 fBodyBodyGyroMag-skewness()</h4>
+
+<h4>541 fBodyBodyGyroMag-kurtosis()</h4>
+
+<h4>542 fBodyBodyGyroJerkMag-mean()</h4>
+
+<h4>543 fBodyBodyGyroJerkMag-std()</h4>
+
+<h4>544 fBodyBodyGyroJerkMag-mad()</h4>
+
+<h4>545 fBodyBodyGyroJerkMag-max()</h4>
+
+<h4>546 fBodyBodyGyroJerkMag-min()</h4>
+
+<h4>547 fBodyBodyGyroJerkMag-sma()</h4>
+
+<h4>548 fBodyBodyGyroJerkMag-energy()</h4>
+
+<h4>549 fBodyBodyGyroJerkMag-iqr()</h4>
+
+<h4>550 fBodyBodyGyroJerkMag-entropy()</h4>
+
+<h4>551 fBodyBodyGyroJerkMag-maxInds</h4>
+
+<h4>552 fBodyBodyGyroJerkMag-meanFreq()</h4>
+
+<h4>553 fBodyBodyGyroJerkMag-skewness()</h4>
+
+<h4>554 fBodyBodyGyroJerkMag-kurtosis()</h4>
+
+<h4>555 angle(tBodyAccMean,gravity)</h4>
+
+<h4>556 angle(tBodyAccJerkMean),gravityMean)</h4>
+
+<h4>557 angle(tBodyGyroMean,gravityMean)</h4>
+
+<h4>558 angle(tBodyGyroJerkMean,gravityMean)</h4>
+
+<h4>559 angle(X,gravityMean)</h4>
+
+<h4>560 angle(Y,gravityMean)</h4>
+
+<h4>561 angle(Z,gravityMean)</h4>
 
 </body>
 

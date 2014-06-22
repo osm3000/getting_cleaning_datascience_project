@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=9" >
 
-<title>CodeBook for the peer Assignment</title>
+<title>README for the peer Assignment</title>
 
 <style type="text/css">
 body, td {
@@ -142,7 +142,7 @@ hr {
 </head>
 
 <body>
-<h1>CodeBook for the peer Assignment</h1>
+<h1>README for the peer Assignment</h1>
 
 <h2>Steps for the R scipt</h2>
 
@@ -150,7 +150,9 @@ hr {
 
 <h3>Read the labels for the data</h3>
 
-<h3>Fix the names of the columns in the datasets, according to the &#39;features&#39; list</h3>
+<h3>Read the features list &ndash;&gt; the names of the columns in the dataset</h3>
+
+<h3>Set the names of the columns in the datasets, according to the &#39;features&#39; list</h3>
 
 <h3>Merge data sets</h3>
 
@@ -159,6 +161,36 @@ hr {
 <h3>Creates a second, independent tidy data set with the average of each variable for each activity and each subject.</h3>
 
 <h3>Print the output</h3>
+
+<p>I&#39;ll also explain my understanding for the different parts of the assignment.</p>
+
+<h2>The task required in the project according to the project desciption</h2>
+
+<p>According to the course description</p>
+
+<h3>You should create one R script called run_analysis.R that does the following.</h3>
+
+<h3>1. Merges the training and the test sets to create one data set.</h3>
+
+<h5>This is straight forward. I use &ldquo;rbind&rdquo; to combine both the test and the training data sets together. The dataset that has such functionality is called &ldquo;mergedData&rdquo;</h5>
+
+<h3>2. Extracts only the measurements on the mean and standard deviation for each measurement.</h3>
+
+<h5>I&#39;ve made a lot of search about the exact meaning of this point. What I feel is right is to make a specific data set, containing only the columns from the original merged datasets which has the following words &ldquo;mean-()&rdquo; and &ldquo;std-()&rdquo;. The data set containing these information is named &ldquo;mergedData2&rdquo;.</h5>
+
+<h3>3. Uses descriptive activity names to name the activities in the data set</h3>
+
+<h5>See the 4th point also, since they both - I believe - has the same meaning</h5>
+
+<h3>4. Appropriately labels the data set with descriptive activity names.</h3>
+
+<h5>For this issue, I combined 3 columns to the merged data set. The first is the &ldquo;subject&rdquo;, parsed from the given subject file for each data set. The 2nd is the &ldquo;Activity Code&rdquo;, which has the code for the acitiviy, parsed from the &#39;y&#39; file for each dataset. The 3rd is the mapping between the &ldquo;Activity Code&rdquo; and the actual activity name, called &ldquo;Activity&rdquo;. This is being done by simple comparisons and replacements, like &ldquo; y_train[y_train == 6] &lt;- &quot;LAYING&rdquo; &ldquo;. I&#39;m sure there&#39;s more effecient way. Combining these columns together with the merged dataset gives us a very nice and understood labelled dataset.</h5>
+
+<h3>5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.</h3>
+
+<h5>I&#39;ve also made a deep search about this issue, however, I didn&#39;t have a clear meaning for it. Based on my understanding, for all the 561 features given in the original datasets, I took the &#39;mean&#39; for each of them, corresponding to each activity for each subject. So, we&#39;ve 30 subjects, and for each of them we&#39;ve 6 activities, we&#39;ve 180 rows and 561 column - each column is the mean of that feature with respect to the activity of each subject -. Again, note this is only based on my understanding for the problem. I added extra 3 columns, &quot;Subject&rdquo;,&ldquo;Activity Code&rdquo; and &ldquo;Activity&rdquo; to make the data more readable. The output of this step is &ldquo;mergedData3&rdquo;</h5>
+
+<h3>To print the tidy data into a .txt file, I used the &ldquo;capture.output&rdquo; function. I&#39;ve made several a lot of trials with &#39;write.table&#39;, but with no use. Not sure why. the output of this step is &ldquo;tidy_data.txt&rdquo;</h3>
 
 </body>
 

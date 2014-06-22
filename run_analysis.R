@@ -102,3 +102,4 @@ mergedData3 <- mergedData3[-1,]
 # Print the output
 #capture.output( print(mergedData3, print.gap=3), file="tidy_data.txt")
 write.csv(mergedData3, file = "Tidy_data.csv")
+write.table(mergedData3, file = "Tidy_data.txt",sep="      \t")#, row.names=FALSE, col.names=FALSE)
